@@ -45,4 +45,5 @@ document.body.addEventListener('click', (event) => {
 Telegram.WebApp.onEvent('mainButtonClicked', function () {
   const formData = getFormData();
   tg.sendData(formData);
+  tg.close();
 });
