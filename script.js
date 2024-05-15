@@ -21,13 +21,8 @@ function validateForm(event) {
   });
 
   if (isValid) {
-    errorDiv.style.display = 'none';
     mainButton.enable(); // Enable MainButton if form is valid
     mainButton.show(); // Show MainButton if form is valid
-  } else {
-    errorDiv.style.display = 'block';
-    mainButton.disable(); // Disable MainButton if form is invalid
-    mainButton.hide(); // Hide MainButton if form is invalid
   }
 
   window.scrollTo(0, 0);
@@ -48,5 +43,6 @@ function getFormData() {
 inputs.forEach((input) => input.addEventListener('input', validateForm));
 mainButton.onClick(() => {
   const formData = getFormData();
+  console.log(formData);
   // Perform actions with formData, like sending it to a server
 });

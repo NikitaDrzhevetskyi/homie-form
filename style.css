@@ -25,7 +25,7 @@
 .form {
   border: 1px solid var(--tg-theme-text-color, #222);
   border-radius: 8px;
-  padding: 40px;
+  padding: 20px;
   background-color: var(--tg-theme-bg-color, #fff);
 }
 
@@ -63,7 +63,6 @@ select:focus {
   padding-bottom: 10px;
   color: var(--tg-theme-hint-color, #a8a8a8);
 }
-
 
 @media only screen and (max-width: 600px) {
   .apartment__price {
