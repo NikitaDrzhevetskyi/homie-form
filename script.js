@@ -1,10 +1,7 @@
-// TG
-const tg = window.Telegram.WebApp;
-
 // Variables
+const tg = window.Telegram.WebApp;
 const inputs = document.querySelectorAll('.form input, .form select, .form textarea');
-const mainButton = tg.MainButton; // Create MainButton instance
-const errorDiv = document.getElementById('error-message');
+const mainButton = tg.MainButton;
 
 // Functions
 function validateForm(event) {
@@ -21,8 +18,8 @@ function validateForm(event) {
   });
 
   if (isValid) {
-    mainButton.enable(); // Enable MainButton if form is valid
-    mainButton.show(); // Show MainButton if form is valid
+    mainButton.enable();
+    mainButton.show();
   }
 
   window.scrollTo(0, 0);
@@ -39,10 +36,18 @@ function getFormData() {
   };
 }
 
-// Event Listeners
+//EVENT Listeners
+//getData
 inputs.forEach((input) => input.addEventListener('input', validateForm));
 mainButton.onClick(() => {
   const formData = getFormData();
   console.log(formData);
-  // Perform actions with formData, like sending it to a server
+  tg.close();
+});
+
+//keyboard focus
+document.body.addEventListener('click', (event) => {
+  if (!event.target.closest('.form')) {
+    document.activeElement.blur();
+  }
 });
