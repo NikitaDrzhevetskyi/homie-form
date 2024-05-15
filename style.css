@@ -65,6 +65,13 @@ select:focus {
 }
 
 @media only screen and (max-width: 600px) {
+  .apartment-form {
+    padding: 15px; 
+  }
+
+  .form {
+    padding-bottom: 30px; 
+  }
   .apartment__price {
     flex-direction: column;
   }
