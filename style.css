@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.title {
+  text-align: center;
+  color: var(--tg-theme-text-color, #222);
+}
+
+.apartment-form {
+  max-width: 1000px;
+  width: 100%;
+  padding: 25px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form {
+  border: 1px solid var(--tg-theme-text-color, #222);
+  border-radius: 8px;
+  padding: 40px;
+  background-color: var(--tg-theme-bg-color, #fff);
+}
+
+label {
+  font-weight: 500;
+  color: var(--tg-theme-text-color, #222);
+}
+
+select:active,
+select:focus {
+  outline: none;
+}
+
+.form label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.form select,
+.form input[type='text'],
+.form input[type='number'],
+.form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid var(--tg-theme-text-color, #222);
+  border-radius: 5px;
+  background-color: var(--tg-theme-bg-color, #fff);
+  margin-bottom: 25px;
+  color: var(--tg-theme-text-color, #222);
+}
+
+.apartment__description p {
+  font-size: 14px;
+  padding-bottom: 10px;
+  color: var(--tg-theme-hint-color, #a8a8a8);
+}
+
+
+@media only screen and (max-width: 600px) {
+  .apartment__price {
+    flex-direction: column;
+  }
+
+  .apartment__price select {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 15px;
+  }
+
+  .apartment__price input.price-input {
+    width: 100%;
+  }
+}

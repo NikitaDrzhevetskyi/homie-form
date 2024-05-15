@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="./style.css"
+    />
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <script
+      src="./script.js"
+      defer
+    ></script>
+  </head>
+  <body>
+    <h1 class="title">Нове оголошення</h1>
+    <section class="apartment-form">
+      <form
+        action="#"
+        class="form"
+      >
+        <div class="apartment__address">
+          <label for="district">Адреса об'єкта</label>
+          <select
+            id="district"
+            name="district"
+          >
+            <option value="">Оберіть район</option>
+            <option value="Shevchekivskyi">Шевченківський</option>
+            <option value="Sykhiv">Сихівський</option>
+            <option value="Frankivskyi">Франківський</option>
+            <option value="Zaliznychnyi">Залізничний</option>
+            <option value="Halitskyi">Галицький</option>
+            <option value="Lychakivskyi">Личаківський</option>
+          </select>
+        </div>
+        <div class="apartment__price">
+          <label for="price">Основні параметри</label>
+          <input
+            type="number"
+            id="price"
+            name="price"
+            class="price-input"
+            placeholder="Ціна * "
+            min="0"
+            oninput="validity.valid||(value='');"
+          />
+          <select
+            id="currency"
+            name="currency"
+          >
+            <option value="uah">Гривень</option>
+            <option value="usd">Доларів</option>
+          </select>
+        </div>
+        <div class="apartment__description">
+          <label for="description">Про квартиру</label>
+          <p>Тут ви можете дати волю своїй фантазії і описати об'єкт нерухомості в найкращому вигляді!</p>
+          <textarea
+            id="description"
+            name="description"
+            placeholder="Опис"
+          ></textarea>
+        </div>
+        <div class="apartment__info">
+          <label for="area">Інформація про об'єкт</label>
+          <select
+            id="room_number"
+            name="room_number"
+          >
+            <option value="">Число кімнат</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+          </select>
+          <input
+            type="number"
+            id="area"
+            name="area"
+            placeholder="Загальна площа м2"
+            min="0"
+            oninput="validity.valid||(value='');"
+          />
+        </div>
+
+        <div
+          id="error-message"
+          style="display: none; color: rgb(220, 20, 20); text-align: center; margin-bottom: 10px"
+        ></div>
+      </form>
+    </section>
+  </body>
+</html>
