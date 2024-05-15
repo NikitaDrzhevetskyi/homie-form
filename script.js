@@ -15,6 +15,8 @@ function validateForm(event) {
 
   if (isValid) {
     mainButton.enable().show();
+  } else {
+    mainButton.hide();
   }
 }
 
