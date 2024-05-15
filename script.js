@@ -3,26 +3,19 @@ const tg = window.Telegram.WebApp;
 const inputs = document.querySelectorAll('.form input, .form select, .form textarea');
 const mainButton = tg.MainButton;
 
+//TG
+mainButton.setText('Підтвердити').setParams({ color: '#D8753A' });
+tg.expand();
+
 // Functions
 function validateForm(event) {
   event.preventDefault();
 
-  let isValid = true;
-  const emptyInputs = [];
-
-  inputs.forEach((input) => {
-    if (input.value.trim() === '') {
-      isValid = false;
-      emptyInputs.push(input);
-    }
-  });
+  const isValid = Array.from(inputs).every((input) => input.value.trim() !== '');
 
   if (isValid) {
-    mainButton.enable();
-    mainButton.show();
+    mainButton.enable().show();
   }
-
-  window.scrollTo(0, 0);
 }
 
 function getFormData() {
@@ -36,18 +29,18 @@ function getFormData() {
   };
 }
 
-//EVENT Listeners
-//getData
+// Event Listeners
 inputs.forEach((input) => input.addEventListener('input', validateForm));
-mainButton.onClick(() => {
-  const formData = getFormData();
-  console.log(formData);
-  tg.close();
-});
 
-//keyboard focus
+//focus for keyboard
 document.body.addEventListener('click', (event) => {
   if (!event.target.closest('.form')) {
     document.activeElement.blur();
   }
+});
+
+//get data for backend
+Telegram.WebApp.onEvent('mainButtonClicked', function () {
+  const formData = getFormData();
+  tg.sendData(formData);
 });
