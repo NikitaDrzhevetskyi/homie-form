@@ -33,8 +33,7 @@ inputs.forEach((input) => {
   input.addEventListener('input', validateForm);
 });
 
-mainButton.addEventListener('click', function (event) {
-  event.preventDefault();
+mainButton.onClick(function () {
   const formData = getFormData();
   tg.sendData(formData);
   tg.close();
