@@ -39,3 +39,9 @@ mainButton.addEventListener('click', function (event) {
   tg.sendData(formData);
   tg.close();
 });
+
+document.body.addEventListener('click', (event) => {
+  if (!event.target.closest('.form')) {
+    document.activeElement.blur();
+  }
+});
