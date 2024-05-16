@@ -33,14 +33,15 @@ inputs.forEach((input) => {
   input.addEventListener('input', validateForm);
 });
 
-mainButton.onClick(function () {
-  const formData = getFormData();
-  tg.sendData(formData);
-  tg.close();
-});
 
 document.body.addEventListener('click', (event) => {
-  if (!event.target.closest('.form')) {
-    document.activeElement.blur();
-  }
+	if (!event.target.closest('.form')) {
+		document.activeElement.blur();
+	}
 });
+
+// mainButton.onClick(function () {
+//   const formData = getFormData();
+//   tg.sendData(formData);
+//   tg.close();
+// });
