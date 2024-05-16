@@ -1,6 +1,5 @@
 const tg = window.Telegram.WebApp;
 const inputs = document.querySelectorAll('.form input, .form select, .form textarea');
-const form = document.querySelector('.form');
 const mainButton = tg.MainButton;
 const submitBtn = document.getElementById('submitBtn');
 
@@ -14,7 +13,7 @@ function validateForm() {
   if (isValid) {
     mainButton.enable().show();
   } else {
-    mainButton.hide();
+    mainButton.disable().hide();
   }
 }
 
@@ -31,16 +30,7 @@ function getFormData() {
 
 // Event Listeners
 inputs.forEach((input) => {
-  input.addEventListener('blur', validateForm);
-});
-
-// Add event listener to form
-form.addEventListener('click', (event) => {
-  const target = event.target;
-  // Focus input fields when clicking anywhere on the form
-  if (target.matches('input, select, textarea')) {
-    target.focus();
-  }
+  input.addEventListener('input', validateForm);
 });
 
 mainButton.addEventListener('click', function (event) {
